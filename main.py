@@ -8,9 +8,9 @@ from time import time
 
 ## Hyper Parameter settings
 
-block_size = 256 # Time dimension
+block_size = 128 # Time dimension
 batch_size = 32 # This is parallelism
-embedding_dim = 64
+embedding_dim = 128
 learning_rate = 1e-3
 max_iters = 5000
 
