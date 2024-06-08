@@ -1,0 +1,11 @@
+# Jupyter stuff
+notebook
+ipywidgets
+jupyter
+
+
+# Pytorch
+torch
+
+# Data from HuggingFace
+datasets
