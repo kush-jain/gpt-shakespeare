@@ -2,20 +2,21 @@
 import torch
 import torch.nn as nn
 from torch.nn import functional as F
+from time import time
 
 # ----------------------
 
 ## Hyper Parameter settings
 
-block_size = 128 # Time dimension
+block_size = 256 # Time dimension
 batch_size = 32 # This is parallelism
 embedding_dim = 64
-learning_rate = 3e-4
+learning_rate = 1e-3
 max_iters = 5000
 
 heads = 8
-transformer_blocks = 3
-dropout = 0.2
+transformer_blocks = 2
+dropout = 0.1
 
 eval_iter = 1000
 
@@ -277,6 +278,7 @@ if __name__ == "__main__":
     xb, yb = get_batch("train")
 
     # Train Code
+    # start_time = time()
     # model = BigramModel()
     # optimizer = torch.optim.AdamW(model.parameters(), lr=learning_rate)
 
@@ -284,6 +286,8 @@ if __name__ == "__main__":
     # print(loss.item())
 
     # torch.save(model.state_dict(), model_path)
+    # end_time = time()
+    # print(f"Training Time: {end_time - start_time}")
 
     # Direct Load
     model = BigramModel()
